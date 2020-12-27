@@ -1,0 +1,42 @@
+ul {
+    list-style-type: none;
+}
+
+#front-page {
+    align-content: center;
+    text-align: center;
+    margin-top: 100px;
+}
+#front-page-text {
+    padding: 30px;
+}
+
+.answers {
+    padding: 20px;
+}
+
+.answers li {
+    margin: 20px 20px 0 0;
+}
+
+.question {
+    margin-top: 100px;
+}
+
+#all-done {
+    margin-top: 100px;
+}
+
+.form-label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+}
+
+#InitialsInput {
+    margin: 10px 10px 0 0;
+}
+
+#submit-initials {
+    margin: 10px 10px 0 0;
+}

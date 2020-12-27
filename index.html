@@ -54,12 +54,11 @@
                     </div>
                 </div>
             </div>
-            <main class="row">
-                <div class="col-md-3"></div>
-                <div class="col md 6">
-                    <div class="visible hidden">
+            <main class="row justify-content-md-center">
+                <div class="col-md-6 main-content">
+                    <div class="visible hidden" id="front-page">
                         <h1>Coding Quiz Challenge</h1>
-                        <p>
+                        <p id="front-page-text">
                         Try to answer the following code-related questions within the time
                         limit. Keep in mind that incorrect answers will penalize your
                         score/time by ten seconds!
@@ -73,7 +72,7 @@
                         </button>
                     </div>
                     <div class="visible hidden">
-                        <h2 class="question-1">
+                        <h2 class="question"  id="question-1">
                         This is where question #1 is going to be.
                         </h2>
                         <ul class="answers">
@@ -117,7 +116,7 @@
                         <hr />
                     </div>
                     <div class="visible hidden">
-                        <h2 class="question-2">
+                        <h2 class="question" id="question-2">
                         This is where question #2 is going to be.
                         </h2>
                         <ul class="answers">
@@ -161,7 +160,7 @@
                         <hr />
                     </div>
                     <div class="visible hidden">
-                        <h2 class="question-3">
+                        <h2 class="question" id="question-3">
                         This is where question #3 is going to be.
                         </h2>
                         <ul class="answers">
@@ -204,13 +203,13 @@
                         </ul>
                         <hr />
                     </div>
-                    <div class="visible hidden">
+                    <div class="visible hidden" id="all-done">
                         <h2 class="all-done">All done!</h2>
                         <p>
                             Your final score is <span class="final-score">0</span>.
                         </p>
-                        <label for="InitialsInput" class="form-label"><strong>Enter your Initials: </strong></label>
-                        <input type="text" class="form-control" id="InitialsInput" placeholder="KCD">
+                        <label for="InitialsInput" class="form-label float-start"><strong>Enter your Initials: </strong></label>
+                        <input type="text" class="form-control float-start" id="InitialsInput" placeholder="Ex. KCD">
                         <button id="submit-initials" class="btn btn-primary btn-choice">Submit</button>
                         <hr>
                     </div>
