@@ -48,11 +48,25 @@
       <main class="row justify-content-md-center">
         <div id="highscores-page" class="col-md-6">
             <h2 id="highscores-label">Highscores</h2>
-            <ul class="highscores-list">
-                <li class="score-1">
-                    This is a test score.
-                </li>
-            </ul>
+            <table id="highscores-table" class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Initials</th>
+                  <th scope="col">Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>Mark</td>
+                  <td>69</td>
+                </tr>
+              </tbody>
+            </table>
+            <button id="button-clear-scores" class="btn btn-primary btn-choice" value="clear-scores">
+              <h2>Clear Highscores</h2>
+              </button>
         </div>  
       </main>
       
