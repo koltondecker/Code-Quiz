@@ -73,6 +73,7 @@ function runQuiz() {
             $("#question-" + j).addClass("hidden");
         }
         $("#all-done").removeClass("hidden");
+        $("#final-score").text(score);
     } 
 
     $("#submit-initials").on("click", function submitHighscore() {
