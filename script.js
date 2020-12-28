@@ -11,6 +11,9 @@ function runQuiz() {
     var timeSeconds = 100;
     var outOfTime;
     var score = timeSeconds;
+    var currentHighscores;
+    var highscoreArray = [];
+    var newHighScore;
     
     interval = setInterval(function() {
         if (timeSeconds > 0) {
@@ -27,27 +30,14 @@ function runQuiz() {
     
     $(".answer-button").on("click", goToNextQuestion);
 
-    // $(".answer-button").on("click", function() {
-    //     if ($(this).hasClass("correct-answer")) {
-    //         //todo: need to add code that puts 'Correct' on the screen after a correct answer is chosen.
-    //     }
-    //     else {
-    //         //todo: need to add code that puts 'Wrong' on the screen after a wrong answer is chosen.
-    //         score -= 10;
-    //         return score;
-    //     }
-    // });
-
     function goToNextQuestion() {
         i++;
         j = i + 1;
 
         if ($(this).hasClass("correct-answer")) {
-            //todo: need to add code that puts 'Correct' on the screen after a correct answer is chosen.
             $("#answer-correctness-text").text("Correct!");
         }
         else {
-            //todo: need to add code that puts 'Wrong' on the screen after a wrong answer is chosen.
             score -= 10;
             $("#time").text(score);
             $("#answer-correctness-text").text("Wrong!");
@@ -79,6 +69,13 @@ function runQuiz() {
     } 
 
     $("#submit-initials").on("click", function submitHighscore() {
+        newHighScore = "initials: " + $("#InitialsInput").val() + ", score: " + score;
+        currentHighscores = JSON.parse(localStorage.getItem("highscore"));
+        if(currentHighscores !== null) {
+            highscoreArray = currentHighscores;
+        }
+        highscoreArray.push(newHighScore);
+        localStorage.setItem("highscore", JSON.stringify(highscoreArray));
         window.location.href = "highscores.html";
     });
 }
