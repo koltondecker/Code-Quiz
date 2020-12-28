@@ -44,11 +44,13 @@ function runQuiz() {
 
         if ($(this).hasClass("correct-answer")) {
             //todo: need to add code that puts 'Correct' on the screen after a correct answer is chosen.
+            $("#answer-correctness-text").text("Correct!");
         }
         else {
             //todo: need to add code that puts 'Wrong' on the screen after a wrong answer is chosen.
             score -= 10;
             $("#time").text(score);
+            $("#answer-correctness-text").text("Wrong!");
 
         }
 
