@@ -25,28 +25,19 @@
                             <header id="header" class="float-left text-dark">
                                 <h1>Code Quiz</h1>
                             </header>
-                            <button
-                                class="navbar-toggler navbar-light"
-                                type="button"
-                                data-toggle="collapse"
-                                data-target="#main-navigation"
-                            >
+                            <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#main-navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
                             <div class="collapse navbar-collapse" id="main-navigation">
                                 <ul class="nav navbar-nav ml-auto">
+                                    <!-- <li class="nav-item">
+                                        <a class="nav-link">Time: <span id="time">100</span></a>
+                                    </li> -->
                                     <li class="nav-item">
-                                        <a
-                                        class="nav-link active"
-                                        aria-current="page"
-                                        href="index.html"
-                                        >Home</a
-                                        >
+                                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" href="highscores.html"
-                                        >View Highscores</a
-                                        >
+                                        <a class="nav-link" href="highscores.html">View Highscores</a>
                                     </li>
                                 </ul>
                             </div>
@@ -56,154 +47,105 @@
             </div>
             <main class="row justify-content-md-center">
                 <div class="col-md-6 main-content">
-                    <div class="visible hidden" id="front-page">
+                    <div id="timer">
+                        <h2>Time: <span id="time">100</span></h2>
+                    </div>
+                    <div class="" id="front-page">
                         <h1>Coding Quiz Challenge</h1>
                         <p id="front-page-text">
                         Try to answer the following code-related questions within the time
                         limit. Keep in mind that incorrect answers will penalize your
                         score/time by ten seconds!
                         </p>
-                        <button
-                        id="button-start"
-                        class="btn btn-primary btn-choice"
-                        value="start-quiz"
-                        >
+                        <button id="button-start" class="btn btn-primary btn-choice" value="start-quiz">
                         <h2>Start</h2>
                         </button>
                     </div>
-                    <div class="visible hidden">
+                    <div class="hidden">
                         <h2 class="question"  id="question-1">
                         This is where question #1 is going to be.
                         </h2>
                         <ul class="answers">
-                        <li class="answer-1">
-                            <button
-                            id="button-1"
-                            class="btn btn-primary btn-choice"
-                            value="1"
-                            >
-                            <h2>1. Answer 1</h2>
-                            </button>
-                        </li>
-                        <li class="answer-2">
-                            <button
-                            id="button-2"
-                            class="btn btn-primary btn-choice"
-                            value="2"
-                            >
-                            <h2>1. Answer 2</h2>
-                            </button>
-                        </li>
-                        <li class="answer-3">
-                            <button
-                            id="button-3"
-                            class="btn btn-primary btn-choice"
-                            value="3"
-                            >
-                            <h2>1. Answer 3</h2>
-                            </button>
-                        </li>
-                        <li class="answer-4">
-                            <button
-                            id="button-4"
-                            class="btn btn-primary btn-choice"
-                            value="4"
-                            >
-                            <h2>1. Answer 4</h2>
-                            </button>
-                        </li>
+                            <li class="answer-1">
+                                <button id="button-1" class="btn btn-primary btn-choice" value="1">
+                                <h2>1. Answer 1</h2>
+                                </button>
+                            </li>
+                            <li class="answer-2">
+                                <button id="button-2" class="btn btn-primary btn-choice" value="2">
+                                <h2>1. Answer 2</h2>
+                                </button>
+                            </li>
+                            <li class="answer-3">
+                                <button id="button-3" class="btn btn-primary btn-choice" value="3">
+                                <h2>1. Answer 3</h2>
+                                </button>
+                            </li>
+                            <li class="answer-4">
+                                <button id="button-4" class="btn btn-primary btn-choice" value="4">
+                                <h2>1. Answer 4</h2>
+                                </button>
+                            </li>
                         </ul>
                         <hr />
                     </div>
-                    <div class="visible hidden">
+                    <div class="hidden">
                         <h2 class="question" id="question-2">
                         This is where question #2 is going to be.
                         </h2>
                         <ul class="answers">
-                        <li class="answer-1">
-                            <button
-                            id="button-1"
-                            class="btn btn-primary btn-choice"
-                            value="1"
-                            >
-                            <h2>1. Answer 1</h2>
-                            </button>
-                        </li>
-                        <li class="answer-2">
-                            <button
-                            id="button-2"
-                            class="btn btn-primary btn-choice"
-                            value="2"
-                            >
-                            <h2>1. Answer 2</h2>
-                            </button>
-                        </li>
-                        <li class="answer-3">
-                            <button
-                            id="button-3"
-                            class="btn btn-primary btn-choice"
-                            value="3"
-                            >
-                            <h2>1. Answer 3</h2>
-                            </button>
-                        </li>
-                        <li class="answer-4">
-                            <button
-                            id="button-4"
-                            class="btn btn-primary btn-choice"
-                            value="4"
-                            >
-                            <h2>1. Answer 4</h2>
-                            </button>
-                        </li>
+                            <li class="answer-1">
+                                <button id="button-1" class="btn btn-primary btn-choice" value="1">
+                                <h2>1. Answer 1</h2>
+                                </button>
+                            </li>
+                            <li class="answer-2">
+                                <button id="button-2" class="btn btn-primary btn-choice" value="2">
+                                <h2>1. Answer 2</h2>
+                                </button>
+                            </li>
+                            <li class="answer-3">
+                                <button id="button-3" class="btn btn-primary btn-choice" value="3">
+                                <h2>1. Answer 3</h2>
+                                </button>
+                            </li>
+                            <li class="answer-4">
+                                <button id="button-4" class="btn btn-primary btn-choice" value="4">
+                                <h2>1. Answer 4</h2>
+                                </button>
+                            </li>
                         </ul>
                         <hr />
                     </div>
-                    <div class="visible hidden">
-                        <h2 class="question" id="question-3">
+                    <div class="hidden" id="question-3">
+                        <h2 class="question">
                         This is where question #3 is going to be.
                         </h2>
                         <ul class="answers">
-                        <li class="answer-1">
-                            <button
-                            id="button-1"
-                            class="btn btn-primary btn-choice"
-                            value="1"
-                            >
-                            <h2>1. Answer 1</h2>
-                            </button>
-                        </li>
-                        <li class="answer-2">
-                            <button
-                            id="button-2"
-                            class="btn btn-primary btn-choice"
-                            value="2"
-                            >
-                            <h2>1. Answer 2</h2>
-                            </button>
-                        </li>
-                        <li class="answer-3">
-                            <button
-                            id="button-3"
-                            class="btn btn-primary btn-choice"
-                            value="3"
-                            >
-                            <h2>1. Answer 3</h2>
-                            </button>
-                        </li>
-                        <li class="answer-4">
-                            <button
-                            id="button-4"
-                            class="btn btn-primary btn-choice"
-                            value="4"
-                            >
-                            <h2>1. Answer 4</h2>
-                            </button>
-                        </li>
+                            <li class="answer-1">
+                                <button id="button-1" class="btn btn-primary btn-choice" value="1">
+                                <h2>1. Answer 1</h2>
+                                </button>
+                            </li>
+                            <li class="answer-2">
+                                <button id="button-2" class="btn btn-primary btn-choice" value="2">
+                                <h2>1. Answer 2</h2>
+                                </button>
+                            </li>
+                            <li class="answer-3">
+                                <button id="button-3" class="btn btn-primary btn-choice" value="3">
+                                <h2>1. Answer 3</h2>
+                                </button>
+                            </li>
+                            <li class="answer-4">
+                                <button id="button-4" class="btn btn-primary btn-choice" value="4">
+                                <h2>1. Answer 4</h2>
+                                </button>
+                            </li>
                         </ul>
                         <hr />
                     </div>
-                    <div class="visible hidden" id="all-done">
+                    <div class="hidden" id="all-done">
                         <h2 class="all-done">All done!</h2>
                         <p>
                             Your final score is <span class="final-score">0</span>.

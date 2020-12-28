@@ -2,10 +2,16 @@ ul {
     list-style-type: none;
 }
 
+#timer {
+    text-align: center;
+    align-content: center;
+    margin-top: 20px;
+}
+
 #front-page {
     align-content: center;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 130px;
 }
 #front-page-text {
     padding: 30px;
@@ -20,16 +26,15 @@ ul {
 }
 
 .question {
-    margin-top: 100px;
+    margin-top: 130px;
 }
 
 #all-done {
-    margin-top: 100px;
+    margin-top: 130px;
 }
 
 .form-label {
     display: inline-block;
-    width: 100px;
     text-align: right;
 }
 
@@ -39,4 +44,8 @@ ul {
 
 #submit-initials {
     margin: 10px 10px 0 0;
+}
+
+.hidden {
+    display: none;
 }
