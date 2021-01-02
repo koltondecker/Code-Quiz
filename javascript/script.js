@@ -78,12 +78,12 @@ $("#submit-initials").on("click", function submitHighscore() {
     initials = document.getElementById("InitialsInput").value;
     newHighScore.initials = initials;
     newHighScore.score = score;
-    window.location.pathname = "/Users/koltondecker/Bootcamp-Homework/Code-Quiz/highscores.html";
+    window.location.pathname = "/Users/koltondecker/Bootcamp-Homework/Code-Quiz/html/highscores.html";
     populateHighscores(initials, newHighScore);
     return initials, newHighScore.initials, newHighScore.score;
 });
 
-if (window.location.pathname === "/Users/koltondecker/Bootcamp-Homework/Code-Quiz/highscores.html") {
+if (window.location.pathname === "/Users/koltondecker/Bootcamp-Homework/Code-Quiz/html/highscores.html") {
     populateHighscores();
 }
 
