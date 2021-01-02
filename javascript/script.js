@@ -76,14 +76,23 @@ function allDone(j) {
 
 $("#submit-initials").on("click", function submitHighscore() {
     initials = document.getElementById("InitialsInput").value;
+    if (initials === "") {
+        alert("Must insert initials");
+        return;
+    }
     newHighScore.initials = initials;
     newHighScore.score = score;
-    window.location.href = "https://koltondecker.github.io/Code-Quiz/html/highscores.html";
+    //window.location.href = "https://koltondecker.github.io/Code-Quiz/html/highscores.html";
+    window.location.pathname = "/Users/koltondecker/Bootcamp-Homework/Code-Quiz/html/highscores.html"
     populateHighscores(initials, newHighScore);
     return initials, newHighScore.initials, newHighScore.score;
 });
 
-if (window.location.href === "https://koltondecker.github.io/Code-Quiz/html/highscores.html") {
+// if (window.location.href === "https://koltondecker.github.io/Code-Quiz/html/highscores.html") {
+//     populateHighscores();
+// }
+
+if (window.location.pathname === "/Users/koltondecker/Bootcamp-Homework/Code-Quiz/html/highscores.html") {
     populateHighscores();
 }
 
@@ -93,7 +102,16 @@ function populateHighscores() {
         highscoreArray = currentHighscores;
     }
     if(newHighScore.initials !== "" && newHighScore.score !== undefined) {
-        highscoreArray.push(newHighScore);
+
+        for(i = 0; i < highscoreArray.length; i++) {
+            if(highscoreArray[i].initials === newHighScore.initials) {
+                highscoreArray[i].score = score;
+            }
+        }    
+        if(highscoreArray.some(e => e.initials === newHighScore.initials) === false) {
+            highscoreArray.push(newHighScore);
+        }
+
     }
     localStorage.setItem("highscore", JSON.stringify(highscoreArray));
 
@@ -102,6 +120,10 @@ function populateHighscores() {
         $("#table-body").append("<tr> <th scope='row'>" + rank + "</th> <td>" + highscoreArray[i].initials + "</td> <td>" + highscoreArray[i].score + "</td> </tr>");
     }
 }
+
+//TODO: Need to add rank sorting system.
+
+//TODO: Need to actually add real questions and answers to html file. 
 
 $("#button-clear-scores").on("click", function(event) {
     localStorage.removeItem("highscore");
