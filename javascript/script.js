@@ -83,7 +83,7 @@ $("#submit-initials").on("click", function submitHighscore() {
     return initials, newHighScore.initials, newHighScore.score;
 });
 
-if (window.location === "https://koltondecker.github.io/Code-Quiz/html/highscores.html") {
+if (window.location.href === "https://koltondecker.github.io/Code-Quiz/html/highscores.html") {
     populateHighscores();
 }
 
