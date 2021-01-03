@@ -82,50 +82,45 @@ $("#submit-initials").on("click", function submitHighscore() {
     }
     newHighScore.initials = initials;
     newHighScore.score = score;
-    window.location.href = "https://koltondecker.github.io/Code-Quiz/html/highscores.html";
-    // window.location.pathname = "/Users/koltondecker/Bootcamp-Homework/Code-Quiz/html/highscores.html"
+    // window.location.href = "https://koltondecker.github.io/Code-Quiz/html/highscores.html";
+    window.location.pathname = "/Users/koltondecker/Bootcamp-Homework/Code-Quiz/html/highscores.html"
     populateHighscores(initials, newHighScore);
     return initials, newHighScore.initials, newHighScore.score;
 });
 
-if (window.location.href === "https://koltondecker.github.io/Code-Quiz/html/highscores.html") {
-    populateHighscores();
-}
-
-// if (window.location.pathname === "/Users/koltondecker/Bootcamp-Homework/Code-Quiz/html/highscores.html") {
+// if (window.location.href === "https://koltondecker.github.io/Code-Quiz/html/highscores.html") {
 //     populateHighscores();
 // }
 
+if (window.location.pathname === "/Users/koltondecker/Bootcamp-Homework/Code-Quiz/html/highscores.html") {
+    populateHighscores();
+}
+
 function populateHighscores() {
     currentHighscores = JSON.parse(localStorage.getItem("highscore"));
+
     if(currentHighscores !== null) {
         highscoreArray = currentHighscores;
     }
+
     if(newHighScore.initials !== "" && newHighScore.score !== undefined) {
-
-        //! Testing out rank sorting!
-        // if(currentHighscores !== null) {
-        //     for(i = 0; i < highscoreArray.length; i++) {
-        //         if(newHighScore.score < highscoreArray[i].score) {
-        //             highscoreArray.splice(i+1, 0, newHighScore);
-        //             return;
-        //         }
-        //     }
-        // }
-        // else {
-        //     highscoreArray.push(newHighScore);
-        // }
-        //! Testing out rank sorting!
-
-        for(i = 0; i < highscoreArray.length; i++) {
-            if(highscoreArray[i].initials === newHighScore.initials) {
-                highscoreArray[i].score = score;
+        if(currentHighscores !== null) {
+            for(i = 0; i < highscoreArray.length; i++) {
+                if(highscoreArray[i].initials === newHighScore.initials) {
+                    highscoreArray[i].score = score;
+                }
+            }    
+            if(highscoreArray.some(e => e.initials === newHighScore.initials) === false) {
+                highscoreArray.push(newHighScore);
             }
-        }    
-        if(highscoreArray.some(e => e.initials === newHighScore.initials) === false) {
+
+            highscoreArray.sort(function(a, b) {
+                return parseFloat(b.score - a.score);
+            });
+        }
+        else {
             highscoreArray.push(newHighScore);
         }
-
     }
     localStorage.setItem("highscore", JSON.stringify(highscoreArray));
 
@@ -133,11 +128,7 @@ function populateHighscores() {
         var rank = i + 1;
         $("#table-body").append("<tr> <th scope='row'>" + rank + "</th> <td>" + highscoreArray[i].initials + "</td> <td>" + highscoreArray[i].score + "</td> </tr>");
     }
-}
-
-//TODO: Need to add rank sorting system.
-
-//TODO: Need to actually add real questions and answers to html file. 
+} 
 
 $("#button-clear-scores").on("click", function(event) {
     localStorage.removeItem("highscore");
